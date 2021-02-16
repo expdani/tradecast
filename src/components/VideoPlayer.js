@@ -51,22 +51,6 @@ class VideoPlayer extends React.Component {
       .then((data) => {
         const ticker = data.ticker;
         const events = data.events; 
-
-        // to test double entries of same type
-        events.push(
-          {
-            "id": "80q9h2doi-ac16-48cd-ae69-9b1c512fed7e",
-            "time": 53,
-            "type": "goal",
-            "player": "Dani",
-            "distanceOfShot": 105,
-            "newScore": {
-              "home": 3,
-              "away": 1
-            }
-          }
-        );
-        
         this.setState({
           ticker: ticker,
           events: events

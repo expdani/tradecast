@@ -13,14 +13,10 @@ class Ticker extends React.Component {
       content = content + " - " + element.body;
     });
 
-    if (this.props.paused) {
-      this.ticker.stop();
-    }
-
     return (
           <>
             <div className="Ticker marquee">
-              <span ref={this.ticker}>{content}</span>
+              <span>{content}</span>
             </div>
           </>
     );
