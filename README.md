@@ -5,4 +5,4 @@
 
 ## Getting started
 1. Open het project en installeer alle dependencies met: `yarn`
-2. Om het project lokaal te draaien op `localhost:3000`, gebruik je `yarn start`
+2. Om het project lokaal te draaien op `localhost:3000` (default), gebruik je `yarn start`
