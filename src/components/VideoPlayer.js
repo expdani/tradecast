@@ -4,6 +4,7 @@ import Event from "./Event";
 
 const src =
   "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4";
+const apiUrl = "https://jsonblob.com/api/jsonBlob/b795d760-6f71-11eb-8f1d-4f9ff21ab4a4";
 
 class VideoPlayer extends React.Component {
   constructor(props) {
@@ -45,9 +46,7 @@ class VideoPlayer extends React.Component {
   }
 
   fetchData = () => {
-    fetch(
-      "https://jsonblob.com/api/jsonBlob/b795d760-6f71-11eb-8f1d-4f9ff21ab4a4"
-    )
+    fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
         const ticker = data.ticker;
@@ -66,7 +65,8 @@ class VideoPlayer extends React.Component {
               "away": 1
             }
           }
-        )
+        );
+        
         this.setState({
           ticker: ticker,
           events: events

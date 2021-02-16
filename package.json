@@ -10,9 +10,7 @@
     "react-dom": "^17.0.1",
     "react-notifications": "^1.7.2",
     "react-scripts": "4.0.2",
-    "react-ticker": "^1.2.2",
     "redux": "^4.0.5",
-    "video-react": "^0.14.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
