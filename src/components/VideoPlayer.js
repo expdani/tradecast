@@ -34,7 +34,7 @@ class VideoPlayer extends React.Component {
 
   renderTicker() {
     if (this.state.ticker != null) {
-      return <Ticker ticker={this.state.ticker} currentTime={this.state.currentTime} />
+      return <Ticker ticker={this.state.ticker} currentTime={this.state.currentTime} paused={this.player.paused || this.player.ended} />
     }
   }
 

@@ -9,20 +9,23 @@ class Event extends React.Component {
   }
 
   fetchEvents() {
-    const event = this.props.events.find((event) => event.time === this.props.currentTime);
+    const currentTime = this.props.currentTime;
+    let event = this.props.events.find((event) => event.time === currentTime);
 
-    if (event) {
-      if (this.state.triggeredEvents.some(e => e.id === event.id)) {
-
-      } else {
-        this.state.triggeredEvents.push(event);
+    if (event && !this.state.triggeredEvents.includes(event)) {
+      event = {
+        ...event,
+        endTime: (event.time + 5)
       }
+      this.state.triggeredEvents.push(event);
     }
-  }
-
-  removeEvent(event) {
-    let filteredArray = this.state.triggeredEvents.filter(triggeredEvent => event.id !== triggeredEvent.id)
-    this.state.triggeredEvents = filteredArray;
+    if (this.state.triggeredEvents.length > 0) {
+      this.state.triggeredEvents.forEach((element, index) => {
+        if (!(element.time <= currentTime && element.endTime >= currentTime)) {
+          this.state.triggeredEvents.splice(index, 1);
+        }
+      });
+    }
   }
 
   renderEventType(event) {
@@ -41,8 +44,8 @@ class Event extends React.Component {
 
     return (
       <>
-        {this.state.triggeredEvents.map((event) => (
-          <div key={event.id} className={"Event " + event.type}>
+        {this.state.triggeredEvents.map((event, index) => (
+          <div key={index} className={"Event " + event.type}>
             { this.renderEventType(event)}
           </div>
         ))}
