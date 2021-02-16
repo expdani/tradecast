@@ -19,8 +19,8 @@ class Ticker extends React.Component {
 
     return (
           <>
-            <div className="Ticker">
-              <marquee ref={this.ticker}>{content}</marquee>
+            <div className="Ticker marquee">
+              <span ref={this.ticker}>{content}</span>
             </div>
           </>
     );
