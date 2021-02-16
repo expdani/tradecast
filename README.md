@@ -1,6 +1,6 @@
 ## Requirements
 -   [Yarn](https://classic.yarnpkg.com/en/docs/install/)
--   [Node](https://nodejs.org/en/download/) (v14.5 used for this project)
+-   [Node](https://nodejs.org/en/download/) (v14.5 gebruikt voor dit project)
 
 
 ## Getting started
